@@ -1,11 +1,11 @@
-    
 const taskInput = document.getElementById('task__input');
 const tasksAdd = document.getElementById('tasks__add');
 const taskList = document.getElementById('tasks__list');
 
 tasksAdd.addEventListener('click', function (event) {    
-    
-    if (taskInput.value === '') return;
+    event.preventDefault(); 
+
+    if (taskInput.value.trim() === '') return;
     
     taskList.innerHTML += `
     <div class="task">
@@ -16,6 +16,5 @@ tasksAdd.addEventListener('click', function (event) {
     </div>        
     `;
 
-    taskInput.value = '';
-    event.preventDefault();    
+    taskInput.value = '';   
 });
